@@ -37,16 +37,6 @@ with tf.Graph().as_default():
         input_image_size = 160
 
         HumanNames = [
-            # 'Park',
-            # 'Kim Chong Hyok',
-            # 'Choe Kyong Jin',
-            # 'Dragon',
-            # 'Ju Yong Chol',
-            # 'Kim Kum Song',
-            # 'Mohammed Alzaidi',
-            # 'Oyuunbaatar',
-            # 'Rich Tulga',
-            # 'Chong Hyun'
             'Human 1',
             'Human 2',
             'Human 3',
