@@ -20,4 +20,4 @@ Real-time face recognition program using Google's facenet.
 * Finally, we load our own 'my_classifier.pkl' obtained above and then open the sensor and start recognition.
 </br> (Note that, look carefully at the paths of files and folders in all .py)
 ## Result
-<img src="https://github.com/bearsprogrammer/real-time-deep-face-recogniton/blob/master/face_detection.png" width="60%">
+<img src="https://github.com/leeyamkeng/realtime_face_recognition/face_detection.png" width="60%">
