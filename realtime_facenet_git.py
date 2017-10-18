@@ -47,7 +47,7 @@ with tf.Graph().as_default():
             'Human 8',
             'Human 9',
             'Human 10'
-            ]    #train human name
+            ]    #train human names
 
         print('Loading feature extraction model')
         modeldir = 'model/20170512-110547/20170512-110547.pb'
