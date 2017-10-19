@@ -69,6 +69,7 @@ with tf.Graph().as_default():
 
         #video writer
         # fourcc = cv2.CV_FOURCC(*'XVID')
+        # fourcc = cv2.CV_FOURCC(*'xmp4')
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
         out = cv2.VideoWriter('3F_0726.avi', fourcc, fps=30, frameSize=(640,480))
 
@@ -115,13 +116,13 @@ with tf.Graph().as_default():
                             continue
 
                         cropped.append(frame[bb[i][1]:bb[i][3], bb[i][0]:bb[i][2], :])
-                        cropped[0] = facenet.flip(cropped[0], False)
-                        scaled.append(misc.imresize(cropped[0], (image_size, image_size), interp='bilinear'))
-                        scaled[0] = cv2.resize(scaled[0], (input_image_size,input_image_size),
+                        cropped[i] = facenet.flip(cropped[i], False)
+                        scaled.append(misc.imresize(cropped[i], (image_size, image_size), interp='bilinear'))
+                        scaled[i] = cv2.resize(scaled[i], (input_image_size,input_image_size),
                                                interpolation=cv2.INTER_CUBIC)
-                        scaled[0] = facenet.prewhiten(scaled[0])
-                        scaled_reshape.append(scaled[0].reshape(-1,input_image_size,input_image_size,3))
-                        feed_dict = {images_placeholder: scaled_reshape[0], phase_train_placeholder: False}
+                        scaled[i] = facenet.prewhiten(scaled[i])
+                        scaled_reshape.append(scaled[i].reshape(-1,input_image_size,input_image_size,3))
+                        feed_dict = {images_placeholder: scaled_reshape[i], phase_train_placeholder: False}
                         emb_array[0, :] = sess.run(embeddings, feed_dict=feed_dict)
                         predictions = model.predict_proba(emb_array)
                         best_class_indices = np.argmax(predictions, axis=1)
