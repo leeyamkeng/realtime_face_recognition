@@ -70,15 +70,17 @@ with tf.Graph().as_default():
         #video writer
         # fourcc = cv2.CV_FOURCC(*'XVID')
         # fourcc = cv2.CV_FOURCC(*'xmp4')
+        w = video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)
+        h = video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
-        out = cv2.VideoWriter('3F_0726.avi', fourcc, fps=30, frameSize=(640,480))
+        out = cv2.VideoWriter('output.avi', fourcc, fps=30, frameSize=(int(w),int(h)))
 
         print('Start Recognition!')
         prevTime = 0
         while True:
             ret, frame = video_capture.read()
 
-            frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)    #resize frame (optional)
+            # frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)    #resize frame (optional)
 
             curTime = time.time()    # calc fps
             timeF = frame_interval
