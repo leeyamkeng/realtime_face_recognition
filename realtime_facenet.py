@@ -79,9 +79,7 @@ with tf.Graph().as_default():
         prevTime = 0
         while True:
             ret, frame = video_capture.read()
-
             # frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)    #resize frame (optional)
-
             curTime = time.time()    # calc fps
             timeF = frame_interval
 
