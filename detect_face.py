@@ -35,8 +35,8 @@ import cv2
 import os
 
 def layer(op):
-    '''Decorator for composable network layers.'''
 
+    '''Decorator for composable network layers.'''
     def layer_decorated(self, *args, **kwargs):
         # Automatically set a name if not provided.
         name = kwargs.setdefault('name', self.get_unique_name(op.__name__))
