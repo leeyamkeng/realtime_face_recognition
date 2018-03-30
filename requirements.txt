@@ -1,0 +1,9 @@
+tensorflow==1.3.0
+scipy
+scikit-learn
+opencv-python
+h5py
+matplotlib
+Pillow
+requests
+psutil
