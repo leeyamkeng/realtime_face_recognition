@@ -3,7 +3,7 @@ python:
   - "3.6"
 # command to install dependencies
 install:
-  - pip install --no-binary numpy --upgrade numpy
   - pip install -r requirements.txt
+  - wget "https://drive.google.com/file/d/0B5MzpY9kBtDVOTVnU3NIaUdySFE/edit"
 # command to run tests
 script: python realtime_facenet.py
