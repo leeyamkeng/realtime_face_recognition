@@ -50,7 +50,7 @@ with tf.Graph().as_default():
             ]    #train human names
 
         print('Loading feature extraction model')
-        modeldir = 'path/to/saved_model.pb'
+        modeldir = '20170511-185253/20170511-185253.pb'
         facenet.load_model(modeldir)
 
         images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
