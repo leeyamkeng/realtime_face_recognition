@@ -1,4 +1,6 @@
-# real-time-deep-face-recogniton
+# real-time-deep-face-recognition
+
+[![Build Status: Linux](https://travis-ci.org/leeyamkeng/realtime_face_recognition.svg?branch=master)](https://travis-ci.org/leeyamkeng/realtime_face_recognition)
 
 Real-time face recognition program using Google's facenet.
 ## Inspiration
